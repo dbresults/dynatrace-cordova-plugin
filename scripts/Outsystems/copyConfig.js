@@ -23,7 +23,7 @@ module.exports = function (context) {
     files = fs.readdirSync(configPath);
     if(files.length >0){
         copyFolderRecursiveSync(configPath, path.join(context.opts.projectRoot));
-            console.log(configPath);
+            console.log(configPath + "Non-Prod ENV");
         deferral.resolve();
     }else{
         console.log("Failed to handle plugin resources: " + configPath);
