@@ -24,6 +24,7 @@ module.exports = function (context) {
     if(files.length >0){
         copyFolderRecursiveSync(configPath, path.join(context.opts.projectRoot));
         deferral.resolve();
+        console.log(configPath + "  (PROD ENV)")
     }else{
         console.log("Failed to handle plugin resources: " + configPath);
         deferral.resolve();
