@@ -1,33 +1,7 @@
 {
-  "_from": "@dynatrace/cordova-plugin",
-  "_id": "@dynatrace/cordova-plugin@1.233.1",
-  "_inBundle": false,
-  "_integrity": "sha512-1ZWHcftkzdmXQYAAn0SDNBDN16WYqpTVbXX8xBGIrJOIzdwxnIppdIFU70OP6olv1MUMx/kfQuOP4EVOAh96jg==",
-  "_location": "/@dynatrace/cordova-plugin",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "tag",
-    "registry": true,
-    "raw": "@dynatrace/cordova-plugin",
-    "name": "@dynatrace/cordova-plugin",
-    "escapedName": "@dynatrace%2fcordova-plugin",
-    "scope": "@dynatrace",
-    "rawSpec": "",
-    "saveSpec": null,
-    "fetchSpec": "latest"
-  },
-  "_requiredBy": [
-    "#USER",
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/@dynatrace/cordova-plugin/-/cordova-plugin-1.233.1.tgz",
-  "_shasum": "cf0e9c9f19b8ee5db0ea9613753cc037c61ab087",
-  "_spec": "@dynatrace/cordova-plugin",
-  "_where": "C:\\Temp\\dyna2",
-  "author": {
-    "name": "Dynatrace"
-  },
-  "bundleDependencies": false,
+  "name": "@dynatrace/cordova-plugin",
+  "version": "1.259.1",
+  "description": "This plugin gives you the ability to use the Dynatrace instrumentation in your hybrid application (Cordova, Ionic, ..). It uses the Mobile Agent, the JavaScript Agent. The Mobile Agent will give you all device specific values containing lifecycle information and the Javascript Agent will allow you to manually instrument your JavaScript/TypeScript code out of the box (Typescript definitions included). The JavaScript Agent will cover the network calls and will automatically detect them.",
   "cordova": {
     "id": "dynatrace-cordova-plugin",
     "platforms": [
@@ -36,47 +10,16 @@
       "windows"
     ]
   },
-  "dependencies": {
-    "axios": "^0.25.0",
-    "cordova-common": "^4.0.2",
-    "if-env": "1.0.4",
-    "jsdom": "^19.0.0",
-    "plist": "^3.0.4"
+  "typings": "typings/main.d.ts",
+  "scripts": {
+    "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand",
+    "tsc": "tsc",
+    "tsc:prod": "tsc -p tsconfig-release.json",
+    "install": "node ./scripts/InstallCap.js",
+    "uninstall": "node ./scripts/UninstallCap.js",
+    "lint": "eslint --cache src/**/*.ts --ignore-pattern .gitignore",
+    "lint:spec": "eslint --cache tests/**/*.ts --cache-file tests/.eslintcache --ignore-pattern .gitignore"
   },
-  "deprecated": false,
-  "description": "This plugin gives you the ability to use the Dynatrace instrumentation in your hybrid application (Cordova, Ionic, ..). It uses the Mobile Agent, the JavaScript Agent. The Mobile Agent will give you all device specific values containing lifecycle information and the Javascript Agent will allow you to manually instrument your JavaScript/TypeScript code out of the box (Typescript definitions included). The JavaScript Agent will cover the network calls and will automatically detect them.",
-  "devDependencies": {
-    "@types/fs-extra": "^9.0.12",
-    "@types/jest": "^27.0.1",
-    "@types/jsdom": "^12.2.4",
-    "@types/mock-fs": "^4.13.1",
-    "@types/plist": "^3.0.2",
-    "@types/shelljs": "^0.8.9",
-    "@types/tar": "^4.0.5",
-    "cordova": "^10.0.0",
-    "fs-extra": "^10.0.0",
-    "jest": "^27.0.5",
-    "mock-fs": "^4.14.0",
-    "npm-check-updates": "^12.0.2",
-    "shelljs": "^0.8.4",
-    "tar": "^6.1.11",
-    "ts-jest": "^27.0.5",
-    "ts-node": "^10.2.1",
-    "typescript": "^3.7.5"
-  },
-  "files": [
-    "assets/*",
-    "files/*",
-    "plugin.xml",
-    "README.md",
-    "other/*",
-    "networking/*",
-    "scripts/*",
-    "model/*",
-    "typings/main.d.ts",
-    "package.json"
-  ],
-  "homepage": "https://www.dynatrace.com/",
   "keywords": [
     "Dynatrace",
     "Mobile",
@@ -87,14 +30,56 @@
     "Monitoring",
     "Ionic"
   ],
-  "license": "Copyright (c) 2012-2020 Dynatrace LLC. All rights reserved.",
-  "name": "@dynatrace/cordova-plugin",
-  "scripts": {
-    "install": "if-env BUILD_PLUGIN=true && echo 'Skipping Install Script' || node ./scripts/installCap.js",
-    "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand",
-    "tsc": "tsc",
-    "uninstall": "if-env BUILD_PLUGIN=true && echo 'Skipping Uninstall Script' || node ./scripts/uninstallCap.js"
+  "author": "Dynatrace",
+  "homepage": "https://www.dynatrace.com/",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "dependencies": {
+    "axios": "^1.3.2",
+    "cordova-common": "^4.1.0",
+    "jsdom": "^21.1.0",
+    "plist": "^3.0.6"
   },
-  "typings": "typings/main.d.ts",
-  "version": "1.233.1"
+  "devDependencies": {
+    "@types/fs-extra": "^9.0.12",
+    "@types/jest": "^29.2.0",
+    "@types/jsdom": "^20.0.1",
+    "@types/mock-fs": "^4.13.1",
+    "@types/plist": "^3.0.2",
+    "@types/shelljs": "^0.8.9",
+    "@typescript-eslint/eslint-plugin": "^5.16.0",
+    "@typescript-eslint/parser": "^5.16.0",
+    "eslint": "^8.11.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsdoc": "^38.0.6",
+    "eslint-plugin-prefer-arrow": "^1.2.3",
+    "eslint-plugin-unicorn": "^41.0.1",
+    "cordova": "^11.0.0",
+    "fs-extra": "^10.0.0",
+    "jest": "^29.2.2",
+    "mock-fs": "^4.14.0",
+    "npm-check-updates": "^12.5.8",
+    "prettier": "^2.6.1",
+    "shelljs": "^0.8.4",
+    "ts-jest": "^29.0.3",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.8.4"
+  },
+  "files": [
+    "assets/*",
+    "files/*",
+    "plugin.xml",
+    "README.md",
+    "LICENSE.md",
+    "other/*",
+    "networking/*",
+    "scripts/*",
+    "model/*",
+    "typings/main.d.ts",
+    "package.json"
+  ],
+  "lint-staged": {
+    "*.ts": "eslint --cache --fix",
+    "**/*": "prettier --write"
+  }
 }
