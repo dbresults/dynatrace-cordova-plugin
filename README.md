@@ -15,7 +15,7 @@ This agent versions are configured in this plugin:
 * Android Agent: 8.211.1.1010
 
 ## MABS Version
-This plugin uses MABS version 7.
+This plugin uses MABS version 8.
 
 ## How to Update this Wrapper
 
@@ -305,4 +305,9 @@ window.plugins.identifyUserNative.identifyUserNative($parameters.Value);
 To finish the process
 1. Commit and push all your code to your fork
 2. Create a release with a tag
-3. Create a PR to merge your code into main
+3. Create a PR to merge your code into main, or point your plugin to your private repo by:
+   * Opening it with Service Studio
+   * Clicking on the plugin name in the right-side panel
+   * Going to extensibility
+   * And changing the URL of the repository
+
