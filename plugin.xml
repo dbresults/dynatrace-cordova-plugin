@@ -20,7 +20,11 @@
     <js-module src="other/DynatraceCordovaPlugin.js" name="dynatraceMobile">
         <clobbers target="dynatraceMobile"/>
     </js-module>
-	
+
+    <js-module src="other/IdentifyUserNative.js" name="identifyUserNative">
+        <clobbers target="window.plugins.identifyUserNative" />
+    </js-module>	
+
     <!-- ios -->
     <platform name="ios">
         <framework src="libsqlite3.dylib" />
@@ -43,7 +47,9 @@
 	    <header-file src="other/DynatraceCordovaPlugin.h"/>
         <source-file src="other/DynatraceCordovaPlugin.m"/>
     </platform>
-	<platform name="android">
+
+    <!-- android -->
+    <platform name="android">
         <framework src="com.dynatrace.agent:agent-android:8.259.1.1008" />
 		<source-file src="other/DynatraceCordovaPlugin.java" target-dir="src/com/dynatrace/cordova/plugin" />
 	
@@ -52,7 +58,7 @@
 				<param name="android-package" value="com.dynatrace.cordova.plugin.DynatraceCordovaPlugin" />
 			</feature>
 		</config-file>
-	</platform>
-	<platform name="windows">
-	</platform>
+    </platform>
+    <platform name="windows">
+    </platform>
 </plugin>
