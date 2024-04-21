@@ -12,7 +12,7 @@ This is based on @dynatrace/cordova-plugin version 1.259.2.
 This agent versions are configured in this plugin:
 
 * iOS Agent: 8.259.1.1009
-* Android Agent: 8.259.1.1008
+* Android Agent: 8.283.1.1004
 
 ## MABS Version
 This plugin uses MABS version 9.
